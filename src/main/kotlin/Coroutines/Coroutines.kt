@@ -9,13 +9,18 @@ object Coroutines {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        GlobalScope.launch {
-            print("The value of 5 is ${square(5)}\n")
-        }
+
+        testFunction1()
         Thread.sleep(1000)
         testRunFunction1()
         testRunFunction2()
         testRunFunction3()
+    }
+
+    fun testFunction1(){
+        GlobalScope.launch {
+            print("The value of 5 is ${square(5)}\n")
+        }
     }
 
     suspend fun square(i: Int): Int {
