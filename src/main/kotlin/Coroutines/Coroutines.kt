@@ -220,7 +220,8 @@ object Coroutines {
 
     fun testRunFunction2() {
         //uses Thread.sleep to show the Blocked behaviour
-        // Thus is run inside same Thread
+        // Thus is run inside same Thread and it merely blocks the Thread
+        // and Doesnt let the thread to run anything else
         runBlocking {
             // Start a coroutine
             launch(coroutineContext) {
