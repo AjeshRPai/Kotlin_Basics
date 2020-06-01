@@ -3,7 +3,7 @@ package Coroutines
 import kotlinx.coroutines.*
 import kotlin.coroutines.coroutineContext
 
-object CoroutineBuilders {
+object CoroutineBuildersExample {
 
     @JvmStatic
     fun main(args: Array<String>) {
@@ -87,15 +87,15 @@ object CoroutineBuilders {
 
     suspend fun launchCoroutines() {
             GlobalScope.launch(coroutineContext) {
-                println("--Launch-- start : ${Coroutines.getThreadName()}")
+                println("--Launch-- start : ${CoroutinesExample.getThreadName()}")
                 Thread.sleep(1000)
-                println("--Launch-- ended : ${Coroutines.getThreadName()}")
+                println("--Launch-- ended : ${CoroutinesExample.getThreadName()}")
             }
 
             run {
-                println("--Run----- start : ${Coroutines.getThreadName()}")
+                println("--Run----- start : ${CoroutinesExample.getThreadName()}")
                 Thread.sleep(200)
-                println("--Run----- ended : ${Coroutines.getThreadName()}")
+                println("--Run----- ended : ${CoroutinesExample.getThreadName()}")
             }
 
     }

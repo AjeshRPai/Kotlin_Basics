@@ -1,6 +1,6 @@
 package Predicates
 
-object Predicates {
+object PredicatesExample {
 
     @JvmStatic
     fun main(args:Array<String>){

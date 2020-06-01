@@ -2,7 +2,7 @@ package Coroutines
 
 import kotlinx.coroutines.*
 
-object Coroutines {
+object CoroutinesExample {
 
     @JvmStatic
     fun main(args: Array<String>) {
