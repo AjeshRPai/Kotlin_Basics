@@ -64,4 +64,3 @@ fun main() {
 
 //https://medium.com/javascript-scene/the-forgotten-history-of-oop-88d71b9b2d9f
 
-//https://www.raywenderlich.com/324105-functional-programming-with-kotlin-and-arrow-part-2-categories-and-functors
