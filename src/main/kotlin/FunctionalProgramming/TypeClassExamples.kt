@@ -15,13 +15,17 @@ import arrow.typeclasses.Eq
 // The Show typeclass abstracts the ability to obtain a String representation of any object.
 // It can be considered the typeclass equivalent of Java’s Object#toString.
 
-class Person(val firstName: String, val lastName: String)
+data class Person(val firstName: String, val lastName: String)
 val personShow = Show<Person> { "Hello $firstName $lastName" }
 
+val personShow2 = Show.fromToString<Person>()
+
 fun typeClassExample() {
-    print(personShow.run {
+    println(personShow.run {
         Person("Jon","Snow")
     })
+
+    println(personShow2.run { Person("Jon","Snow") })
 }
 
 // The Eq typeclass abstracts the ability to compare two instances of any object.
@@ -33,11 +37,12 @@ fun eqExample() {
     val person1 = Person("John","dane")
     val person2 = Person("John","doe")
 
-    print(comparePerson.run { person1.eqv(person2)})
+    println(comparePerson.run { person1.eqv(person2)})
 
 }
 
 fun main() {
+    typeClassExample()
     eqExample()
 }
 
