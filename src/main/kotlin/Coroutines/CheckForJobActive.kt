@@ -2,7 +2,6 @@ package Coroutines
 
 import kotlinx.coroutines.*
 
-
     suspend fun workWithActive() {
         val startTime = System.currentTimeMillis()
         var nextPrintTime = startTime
