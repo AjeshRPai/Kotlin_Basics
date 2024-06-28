@@ -1,11 +1,6 @@
-package Coroutines.exercises
+package coroutines.exercises
 
 import kotlinx.coroutines.*
-import kotlinx.coroutines.test.currentTime
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertTrue
 
 class ShowUserDataUseCase(
     private val repo: UserDataRepository,

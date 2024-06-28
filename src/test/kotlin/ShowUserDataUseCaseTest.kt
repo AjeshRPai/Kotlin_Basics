@@ -1,10 +1,11 @@
-package Coroutines.exercises
+package coroutines.exercises
+
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.job
 import kotlinx.coroutines.test.currentTime
 import kotlinx.coroutines.test.runTest
-import org.junit.Test
+import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 

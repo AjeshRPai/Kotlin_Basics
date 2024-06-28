@@ -1,5 +1,6 @@
 @file:Suppress("OPT_IN_USAGE")
 
+import org.gradle.internal.impldep.org.junit.Test
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -19,7 +20,7 @@ val coroutinesVersion = "1.9.0-RC"
 
 dependencies {
     implementation(kotlin("test"))
-    implementation(kotlin("test-junit"))
+    implementation(kotlin("test-junit5"))
     implementation(kotlin("reflect"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion")
@@ -34,6 +35,17 @@ java.sourceSets["test"].java {
     srcDir("src/main/kotlin")
 }
 
+tasks.test {
+    useJUnitPlatform()
+    testLogging {
+        events("passed", "skipped", "failed")
+    }
+}
+
 powerAssert {
     functions = listOf("kotlin.assert", "kotlin.test.assertEquals")
+}
+
+kotlin {
+    jvmToolchain(11)
 }
