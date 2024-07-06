@@ -1,7 +1,10 @@
+import coroutines.synchronized.FakeNetworkService
+import coroutines.synchronized.UserDownloader
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import kotlin.test.Test
 import kotlin.test.assertEquals
 
 
