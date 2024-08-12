@@ -1,4 +1,4 @@
-package CollectionsEg
+package collectionsExample
 
 import InlineFunctionType.InlineTimeMeasure.measureExecution
 
