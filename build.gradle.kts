@@ -4,7 +4,7 @@ import org.gradle.internal.impldep.org.junit.Test
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "2.0.0"
+    kotlin("jvm") version "2.0.20"
     kotlin("plugin.power-assert") version "2.0.0"
     application
 }
