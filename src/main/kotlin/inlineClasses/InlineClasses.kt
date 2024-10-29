@@ -9,6 +9,16 @@ data class Transaction(val currency: String, val amount: String)
 value class Amount(
     val value: String
 ) {
+    // Secondary constructor for amount in cents
+    constructor(cents: Int, dollar: Int) : this((cents / 100.0 + dollar).toString()) {
+        require(cents >= 0) {
+            "Cents value must be non-negative"
+        }
+    }
+
+    fun roundOff() {
+
+    }
 
     // Property to convert value to Double if needed
     val amount: Double
@@ -35,6 +45,15 @@ value class Amount(
     override fun toString(): String = value
 }
 
+
+@JvmInline
+value class Box<T>(val value: T) {
+    fun unwrap(): T = value
+
+    override fun toString(): String {
+        return "Box(value=$value)"
+    }
+}
 
 // difference between type alias and inline classes
 
