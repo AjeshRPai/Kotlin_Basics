@@ -13,4 +13,8 @@ suspend fun main() {
     val b: Boolean = suspendCancellableCoroutine<Boolean> { c -> c.resumeWith(Result.success(true))
     }
     println(b) // true
+
+
 }
+
+
