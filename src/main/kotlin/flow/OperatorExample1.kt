@@ -129,16 +129,17 @@ fun main() = runBlocking {
     val viewModel = ViewModel()
     val pageId = 1
 
-//    println("Case 1: Wait for both flows to emit before combining")
-//    viewModel.getUiModelFlowWithWait(pageId).collect { uiModels ->
-//        println("UI Models (Wait): $uiModels")
-//    }
-//
-//    println("\nCase 2: Combine flows as they emit")
-//    viewModel.getUiModelFlowWithoutWait(pageId).collect { uiModel ->
-//        println("UI Model (Real-time): $uiModel")
-//    }
+    println("Case 1: Wait for both flows to emit before combining")
+    viewModel.getUiModelFlowWithWait(pageId).collect { uiModels ->
+        println("UI Models (Wait): $uiModels")
+    }
 
+    println("\nCase 2: Combine flows as they emit")
+    viewModel.getUiModelFlowWithoutWait(pageId).collect { uiModel ->
+        println("UI Model (Real-time): $uiModel")
+    }
+
+    println("\nCase 2: Combine flows as they emit with merge")
     viewModel.getUiModelFlowWithoutWait2(pageId).collect { uiModel ->
         println("UI Model (Real-time): $uiModel")
     }
