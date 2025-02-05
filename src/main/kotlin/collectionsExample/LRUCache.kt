@@ -45,8 +45,6 @@ class MyLRUCache<T>(val maxSize: Int): LRUCache<T> {
     }
   }
 
-
-
   fun dump() {
     println(internalCache)
   }

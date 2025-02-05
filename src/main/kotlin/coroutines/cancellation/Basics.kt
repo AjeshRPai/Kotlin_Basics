@@ -1,6 +1,7 @@
 package coroutines.cancellation
 
 import kotlinx.coroutines.*
+import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.cancellation.CancellationException
 
 //suspend fun main(): Unit = coroutineScope {
@@ -27,7 +28,6 @@ import kotlin.coroutines.cancellation.CancellationException
 // Printing 4
 // (0.1 sec)
 // Cancelled successfully
-
 
 
 //suspend fun main(): Unit = coroutineScope {
@@ -109,8 +109,7 @@ import kotlin.coroutines.cancellation.CancellationException
 
 // with Context
 suspend fun main(): Unit = coroutineScope {
-    val job = Job()
-    launch(job) {
+    launch {
         try {
             println("Coroutine started")
             delay(200)
@@ -125,6 +124,5 @@ suspend fun main(): Unit = coroutineScope {
         }
     }
     delay(100)
-    job.cancelAndJoin()
     println("Done")
 }

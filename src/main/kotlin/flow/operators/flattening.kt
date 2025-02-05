@@ -58,12 +58,11 @@ suspend fun flatMapMerge() {
 
 suspend fun flatMapLatest() {
     flowOf("A", "B", "C")
-        .onEach { delay(1200) }
         .flatMapLatest { flowFrom(it) }
         .collect { println(it) }
 }
 
 suspend fun main() {
-    flatMap()
+    flatMapLatest()
 }
 

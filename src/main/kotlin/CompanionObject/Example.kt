@@ -28,10 +28,6 @@ class SecondClass{
 }
 
 open class Function{
-
     fun doSomething(){
-
     }
 }
-
-
