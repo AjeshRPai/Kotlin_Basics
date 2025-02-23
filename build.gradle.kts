@@ -25,6 +25,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion")
     implementation("com.sksamuel.aedile:aedile-core:1.3.1") // Needed for CompanyDetailsRepository
+    implementation("io.reactivex.rxjava3:rxjava:3.0.0")
+
 }
 
 tasks.withType<KotlinCompile> {
