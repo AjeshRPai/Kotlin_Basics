@@ -1,6 +1,7 @@
 package rxjava
 
 import io.reactivex.rxjava3.core.Observer
+import io.reactivex.rxjava3.subjects.AsyncSubject
 import io.reactivex.rxjava3.subjects.PublishSubject
 
 
@@ -27,7 +28,7 @@ fun main1() {
 }
 
 
-fun main() {
+fun main2() {
     val subject = PublishSubject.create<String>()
 
     // First subscriber subscribes
@@ -54,3 +55,29 @@ fun main() {
     // Emit more values (these will NOT be received because the subject has terminated)
     subject.onNext("Item 3")
 }
+
+fun main() {
+    val subject = AsyncSubject.create<String>()
+
+    subject.onNext("Item 1")
+    subject.onNext("Item 2")
+    subject.onNext("Item 3")
+
+    // First subscriber joins
+    subject.subscribe(
+        { item -> println("Subscriber 1 received: $item") },
+        { error -> println("Subscriber 1 error: ${error.message}") },
+        { println("Subscriber 1 completed") }
+    )
+
+    // Complete the subject
+    subject.onComplete()
+
+    // Second subscriber joins after completion
+    subject.subscribe(
+        { item -> println("Subscriber 2 received: $item") },
+        { error -> println("Subscriber 2 error: ${error.message}") },
+        { println("Subscriber 2 completed") }
+    )
+}
+
